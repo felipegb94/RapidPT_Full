@@ -1,0 +1,7 @@
+*.mat
+*.mex*
+mex/test.arma
+mex/testArmaMatrixMult.cpp
+debug_data
+mex/debug.cpp
+mex/debut_T.arma

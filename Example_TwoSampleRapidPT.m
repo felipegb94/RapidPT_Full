@@ -1,9 +1,9 @@
-maxNumCompThreads(1);
+% maxNumCompThreads(1);
 % Set path variables
 
 % Load input data and input labels
-dataPathVal = '~/PermTest/data/ADRC/TwoSample/ADRC_100_50_50.mat'; 
-labelsPathVal = '~/PermTest/data/ADRC/TwoSample/labels_100_50_50.mat'; 
+dataPathVal = '~/PermTest/data/ADRC/TwoSample/ADRC_50_25_25.mat'; 
+labelsPathVal = '~/PermTest/data/ADRC/TwoSample/labels_50_25_25.mat'; 
 load(dataPathVal);
 load(labelsPathVal);
 % N subjects, V voxels (or statistics)
@@ -28,19 +28,19 @@ saveDirKey = 'saveDir';
 timingDirKey = 'timingDir';
 
 % Set the corresponding values to the keys.
-rapidPTLibraryPathVal = {'~/PermTest/RapidPermTest'};
+rapidPTLibraryPathVal = {'~/PermTest/RapidPT_Full'};
 testingTypeVal = {'TwoSample'};
 nGroup1Val = 50; % Size of group 1 
 nGroup2Val = 50; % Size of group 2
 subVal = {0.005};  % Sampling Rate
 TVal = {5000}; % Number of Permutations.
 maxRankVal = {N}; % Rank for estimating the low rank subspace
-trainNumVal = {50}; % Number of permutations for training.
+trainNumVal = {N}; % Number of permutations for training.
 maxCyclesVal = {3}; % Number of cycles for training.
 iterVal = {30}; % Number of iterations for matrix completion.
-writingVal = {1}; % 0 if only output maxnull or 1 if outputs maxnull, U and W
-saveDirVal = {'~/PermTest/outputs/TwoSample_ADRC_50_50_100/rapidpt/'}; % Path to save outputs
-timingDirVal = {'~/PermTest/timings/TwoSample_ADRC_50_50_100/rapidpt/'}; % Path to save timing
+writingVal = {0}; % 0 if only output maxnull or 1 if outputs maxnull, U and W
+saveDirVal = {'outputs/'}; % Path to save outputs
+timingDirVal = {'outputs/'}; % Path to save timing
 
 inputs = struct(rapidPTLibraryPathKey, rapidPTLibraryPathVal,...
                 testingTypeKey, testingTypeVal,...
